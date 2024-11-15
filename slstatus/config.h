@@ -66,8 +66,8 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format          argument */
 	{ battery_perc, " BATT: %s% | ",         "BAT1"      },
-    { disk_free, "HDD: %s | ",              "/dev/sda3" },
-    { cpu_perc, "CPU: %s% | ",              NULL        },
+    { run_command, "HDD: %s | ",              "df --output=avail -h / | awk 'NR==2 {print $1}'" },
+    { cpu_perc, "CPU: %s%% | ",              NULL        },
     { ram_perc, "RAM: %s% | ",              NULL        },
     { run_command, "Vol: %s | ",        "pamixer --get-volume-human | awk '{print $1}'"        },
 	{ datetime, "%s",                   "%r"     },
