@@ -1,7 +1,9 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/keysym.h>
+#include <X11/XF86keysym.h>
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -9,7 +11,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char background_color[]= "#06283D";
-static const char border_color[]    = "#06283D";
+static const char border_color[]    = "#1363DF";
 static const char text_color[]      = "#DFF6FF";
 static const char active_window_text_color[] = "#DFF6FF";
 static const char workspace_background_color[] = "#005577";
@@ -90,6 +92,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_b, spawn,               {.v = browser} },
+    { 0, XF86XK_AudioRaiseVolume, spawn, SHCMD("$HOME/Documents/scripts/volume/volume.sh up") },
+    { 0, XF86XK_AudioLowerVolume, spawn, SHCMD("$HOME/Documents/scripts/volume/volume.sh down") },
+    { 0, XF86XK_AudioMute, spawn, SHCMD("$HOME/Documents/scripts/volume/volume.sh mute") },
+    { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("$HOME/Documents/scripts/brightness/brightness.sh up") },
+    { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("$HOME/Documents/scripts/brightness/brightness.sh down") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
