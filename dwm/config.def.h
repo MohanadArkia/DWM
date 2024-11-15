@@ -63,6 +63,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", background_color, "-nf", text_color, "-sb", workspace_background_color, "-sf", active_window_text_color, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browser[] =  { "brave" };
+static const char *lockcmd[] = { "slock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -96,6 +97,8 @@ static const Key keys[] = {
     { 0, XF86XK_AudioMute, spawn, SHCMD("$HOME/Documents/scripts/volume/volume.sh mute") },
     { 0, XF86XK_MonBrightnessUp, spawn, SHCMD("$HOME/Documents/scripts/brightness/brightness.sh up") },
     { 0, XF86XK_MonBrightnessDown, spawn, SHCMD("$HOME/Documents/scripts/brightness/brightness.sh down") },
+    /* Add this to your keys[] array */
+    { MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
