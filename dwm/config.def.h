@@ -8,8 +8,8 @@ static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "Iosevka:size=10" };
+static const char dmenufont[]       = "Iosevka:size=10";
 static const char background_color[]= "#06283D";
 static const char border_color[]    = "#000033";
 static const char text_color[]      = "#DFF6FF";
@@ -60,7 +60,10 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", background_color, "-nf", text_color, "-sb", workspace_background_color, "-sf", active_window_text_color, NULL };
+//static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", background_color, "-nf", text_color, "-sb", workspace_background_color, "-sf", active_window_text_color, NULL };
+
+static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL};
+
 static const char *termcmd[]  = { "st", NULL };
 static const char *browser[] =  { "brave" };
 static const char *lockcmd[] = { "slock", NULL };
