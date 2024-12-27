@@ -64,7 +64,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 
 static const char *dmenucmd[] = { "rofi", "-show", "drun", NULL};
 
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[] =  { "brave" };
 static const char *lockcmd[] = { "slock", NULL };
 
